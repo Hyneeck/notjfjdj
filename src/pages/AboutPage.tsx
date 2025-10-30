@@ -1,10 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import MVFarmaHeader from '../components/MVFarmaHeader';
 import MVFarmaFooter from '../components/MVFarmaFooter';
 import ScrollAnimation from '../components/ScrollAnimation';
 import SEO from '../components/SEO';
-import HeroSection from '../components/HeroSection';
-import LazyImage from '../components/LazyImage';
 
 const AboutPage = () => {
   return (
@@ -17,24 +15,33 @@ const AboutPage = () => {
       />
       <MVFarmaHeader />
       
-      <HeroSection
-        title="Naše Farma"
-        subtitle="Poznajte příběh naší rodinné farmy a našich včel"
-        imageSrc="/lovable-uploads/ee1c2855-0e47-4b86-acc3-a1d23cc1f1e2.png"
-        imageAlt="Včelí úl s včelami na farmě MVFarma"
-      />
+      {/* Hero Section */}
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/lovable-uploads/ee1c2855-0e47-4b86-acc3-a1d23cc1f1e2.png')"}}>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-5 relative z-10 text-center">
+          <ScrollAnimation animation="fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Naše Farma
+            </h1>
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
+              Poznajte příběh naší rodinné farmy a našich včel
+            </p>
+          </ScrollAnimation>
+        </div>
+      </section>
 
       {/* Our Story Section */}
       <section className="py-[clamp(2rem,6vw,6rem)] bg-background">
         <div className="container mx-auto px-5 max-w-[1200px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <ScrollAnimation animation="slide-in-left">
-              <LazyImage
-                src="/lovable-uploads/54f5fbc3-f416-48e1-a918-3d7af5366e79.png"
-                alt="Včelnice v lese, přirozené prostředí pro včelstva MVFarma"
-                className="aspect-[4/3] rounded-lg overflow-hidden w-full h-full object-cover"
-                loading="lazy"
-              />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/54f5fbc3-f416-48e1-a918-3d7af5366e79.png"
+                  alt="Včelnice v lese"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </ScrollAnimation>
 
             <ScrollAnimation animation="slide-in-right">
@@ -73,12 +80,13 @@ const AboutPage = () => {
             </ScrollAnimation>
 
             <ScrollAnimation animation="slide-in-right">
-              <LazyImage
-                src="/lovable-uploads/95c59643-961e-4414-bbd5-a207ff310f53.png"
-                alt="Včelařka MVFarma kontroluje plást s medem a včelami"
-                className="aspect-[4/3] rounded-lg overflow-hidden w-full h-full object-cover"
-                loading="lazy"
-              />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/95c59643-961e-4414-bbd5-a207ff310f53.png"
+                  alt="Včelařka s plástí medu"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </ScrollAnimation>
           </div>
 

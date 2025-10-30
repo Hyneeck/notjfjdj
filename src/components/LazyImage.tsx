@@ -23,6 +23,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   sizes,
   ...props
 }) => {
+  console.log('LazyImage rendering with React hooks');
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
   const [hasError, setHasError] = useState(false);

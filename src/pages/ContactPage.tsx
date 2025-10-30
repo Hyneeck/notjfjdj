@@ -1,9 +1,8 @@
-import React, { lazy, Suspense, memo } from 'react';
+import React, { lazy, Suspense } from 'react';
 import MVFarmaHeader from '../components/MVFarmaHeader';
 import MVFarmaFooter from '../components/MVFarmaFooter';
 import { MapPin, Phone, Mail, HelpCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
-import HeroSection from '../components/HeroSection';
 
 const ScrollAnimation = lazy(() => import('../components/ScrollAnimation'));
 const ContactForm = lazy(() => import('../components/ContactForm'));
@@ -22,12 +21,22 @@ const ContactPage = () => {
     <div className="min-h-screen">
       <MVFarmaHeader />
       
-      <HeroSection
-        title="Kontaktujte nás"
-        subtitle="Rádi odpovíme na vaše dotazy a těšíme se na setkání s vámi"
-        imageSrc="/lovable-uploads/ee1c2855-0e47-4b86-acc3-a1d23cc1f1e2.png"
-        imageAlt="Včelí úl MVFarma, kontaktní informace"
-      />
+      {/* Hero Section */}
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/lovable-uploads/ee1c2855-0e47-4b86-acc3-a1d23cc1f1e2.png')"}}>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-5 relative z-10 text-center">
+          <Suspense fallback={<div className="opacity-0">Loading...</div>}>
+            <ScrollAnimation animation="fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Kontaktujte nás
+              </h1>
+              <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
+                Rádi odpovíme na vaše dotazy a těšíme se na setkání s vámi
+              </p>
+            </ScrollAnimation>
+          </Suspense>
+        </div>
+      </section>
 
       {/* Contact Information & Form */}
       <section className="py-[clamp(2rem,6vw,6rem)] bg-background">
