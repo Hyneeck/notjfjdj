@@ -2,6 +2,7 @@ import React from 'react';
 import MVFarmaHeader from '../components/MVFarmaHeader';
 import MVFarmaFooter from '../components/MVFarmaFooter';
 import ScrollAnimation from '../components/ScrollAnimation';
+import LazyImage from '../components/LazyImage';
 import { Instagram } from 'lucide-react';
 
 const BlogPage = () => {
@@ -11,11 +12,11 @@ const BlogPage = () => {
       image: "/lovable-uploads/0b66bf50-89ff-4f01-bb65-989583bc0630.png"
     },
     {
-      description: "Čerstvý med přímo z našich úlů",
+      description: "Jarní květy",
       image: "/lovable-uploads/becb71bc-a935-453e-99e1-ed42b99576c1.png"
     },
     {
-      description: "Včely při práci na plástech plných medu",
+      description: "Pracoviště Strahov",
       image: "/lovable-uploads/c2c6f111-8b0d-40b0-94ac-b52e9992d935.png"
     }
   ];
@@ -61,10 +62,11 @@ const BlogPage = () => {
                   className="group block bg-card rounded-lg border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 >
                   <div className="aspect-square bg-gradient-to-br from-accent to-secondary relative overflow-hidden">
-                    <img 
+                    <LazyImage 
                       src={post.image}
                       alt={post.description}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-6">
