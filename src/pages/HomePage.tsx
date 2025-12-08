@@ -75,11 +75,12 @@ const HomePage = () => {
                 <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center p-4">
                       <LazyImage 
-                         src="/lovable-uploads/936cc78e-2a1f-49c7-ac34-a35ec7fe5d15.png"
-                         alt="Jarní květový med z MVFarma - světlý med z jarních květů"
-                          className="max-w-full max-h-full object-cover"
-                          priority={true}
-                       />
+                        src="/lovable-uploads/936cc78e-2a1f-49c7-ac34-a35ec7fe5d15.png"
+                        alt="Jarní květový med z MVFarma - světlý med z jarních květů"
+                        className="max-w-full max-h-full object-cover"
+                        priority={true}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
                    </div>
                    <div className="p-6">
                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Jarní květový med</h3>
@@ -98,10 +99,11 @@ const HomePage = () => {
               <Link to="/medy-a-vcely" className="group block">
                 <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-[4/3] bg-gradient-to-br from-accent to-secondary flex items-center justify-center p-4">
-                     <LazyImage 
+                      <LazyImage 
                         src="/lovable-uploads/cba10f0a-8de3-4c22-898c-bcc76b96bc31.png"
                         alt="Letní květový med z MVFarma - tmavší med z letní sklizně"
                         className="max-w-full max-h-full object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                    </div>
                    <div className="p-6">

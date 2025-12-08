@@ -87,7 +87,8 @@ const HoneyPage = () => {
                           src={index === 0 ? "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png" : "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png"}
                           alt={index === 0 ? "Jarní květový med z MVFarma - světlý med z jarních květů" : "Letní květový med z MVFarma - tmavší med z letní sklizně"}
                           className="max-w-full max-h-full object-cover"
-                       />
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
                     </div>
                   </div>
                   <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
@@ -129,6 +130,7 @@ const HoneyPage = () => {
                   src="/lovable-uploads/95c59643-961e-4414-bbd5-a207ff310f53.png"
                   alt="Včelařka s plástí medu - MVFarma"
                   className="max-w-full max-h-full object-cover rounded-lg"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <div>
