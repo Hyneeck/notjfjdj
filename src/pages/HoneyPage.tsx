@@ -1,13 +1,13 @@
-import React from 'react';
-import MVFarmaHeader from '../components/MVFarmaHeader';
-import MVFarmaFooter from '../components/MVFarmaFooter';
-import ScrollAnimation from '../components/ScrollAnimation';
-import SEO from '../components/SEO';
-import StructuredData from '../components/StructuredData';
-import LazyImage from '../components/LazyImage';
-import { Flower2, TreePine, Heart, Leaf, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import React from "react";
+import MVFarmaHeader from "../components/MVFarmaHeader";
+import MVFarmaFooter from "../components/MVFarmaFooter";
+import ScrollAnimation from "../components/ScrollAnimation";
+import SEO from "../components/SEO";
+import StructuredData from "../components/StructuredData";
+import LazyImage from "../components/LazyImage";
+import { Flower2, TreePine, Heart, Leaf, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HoneyPage = () => {
   const honeyTypes = [
@@ -16,34 +16,35 @@ const HoneyPage = () => {
       description: "Květový med z jarních květů z luk a zahrad, má světlou barvu a jemnější chuť.",
       icon: Flower2,
       price: "200 Kč/950g",
-      features: ["Jemná sladká chuť", "Světlá barva", "Přirozená krystalizace"]
+      features: ["Jemná sladká chuť", "Světlá barva", "Přirozená krystalizace"],
     },
     {
       title: "Letní květový med",
-      description: "Květový med z letní sklizně zejména z luk a lesů, má lehce tmavší barvu než jarní. Obsahuje podíl medovice",
+      description:
+        "Květový med z letní sklizně zejména z luk a lesů, má lehce tmavší barvu než jarní. Obsahuje podíl medovice",
       icon: TreePine,
       price: "220 Kč/950g",
-      features: ["Pikantnější chuť", "Tmavší barva", "Dlouhá trvanlivost"]
-    }
+      features: ["Pikantnější chuť", "Tmavší barva", "Dlouhá trvanlivost"],
+    },
   ];
 
   return (
     <div className="min-h-screen">
-      <SEO 
+      <SEO
         title="Medy a včely - MVFarma | Květový a medovicový med z tradičního včelařství"
         description="Objevte kvalitní med z MVFarma - jarní a letní květový med z 30 úlů v Českomoravské vrchovině. Tradiční výroba, šetrné stáčení."
         keywords="jarní květový med, letní květový med, medovicový med, včelařství, MVFarma, med z lesa, med z luk, český med, tradiční výroba"
         url="https://mvfarma.cz/medy-a-vcely"
         type="product"
       />
-      <StructuredData 
-        type="Product" 
+      <StructuredData
+        type="Product"
         data={{
           name: "Květový med MVFarma",
           description: "Kvalitní květový med z tradičního včelařství",
           brand: {
             "@type": "Brand",
-            name: "MVFarma"
+            name: "MVFarma",
           },
           offers: [
             {
@@ -51,22 +52,23 @@ const HoneyPage = () => {
               price: "200",
               priceCurrency: "CZK",
               availability: "https://schema.org/InStock",
-              itemCondition: "https://schema.org/NewCondition"
-            }
+              itemCondition: "https://schema.org/NewCondition",
+            },
           ],
-          image: "https://mvfarma.cz/lovable-uploads/honey-jar-optimized.webp"
+          image: "https://mvfarma.cz/lovable-uploads/honey-jar-optimized.webp",
         }}
       />
       <MVFarmaHeader />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/lovable-uploads/dbc0e436-d319-4d9b-a7f8-78847ac61863.png')"}}>
+      <section
+        className="relative min-h-[50vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/lovable-uploads/dbc0e436-d319-4d9b-a7f8-78847ac61863.png')" }}
+      >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-5 relative z-10 text-center">
           <ScrollAnimation animation="fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Medy a včely
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Medy a včely</h1>
             <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
               Objevte svět našich včel a kvalitních medů z čisté přírody
             </p>
@@ -80,24 +82,30 @@ const HoneyPage = () => {
           <div className="grid grid-cols-1 gap-16">
             {honeyTypes.map((honey, index) => (
               <ScrollAnimation key={index} animation="fade-in" delay={index * 200}>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                >
+                  <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                     <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center p-8">
-                        <LazyImage 
-                          src={index === 0 ? "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png" : "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png"}
-                          alt={index === 0 ? "Jarní květový med z MVFarma - světlý med z jarních květů" : "Letní květový med z MVFarma - tmavší med z letní sklizně"}
-                          className="max-w-full max-h-full object-cover"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
+                      <LazyImage
+                        src={
+                          index === 0
+                            ? "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png"
+                            : "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png"
+                        }
+                        alt={
+                          index === 0
+                            ? "Jarní květový med z MVFarma - světlý med z jarních květů"
+                            : "Letní květový med z MVFarma - tmavší med z letní sklizně"
+                        }
+                        className="max-w-full max-h-full object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
                     </div>
                   </div>
-                  <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
-                      {honey.title}
-                    </h2>
-                    <p className="text-lg text-foreground mb-6 leading-relaxed">
-                      {honey.description}
-                    </p>
+                  <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{honey.title}</h2>
+                    <p className="text-lg text-foreground mb-6 leading-relaxed">{honey.description}</p>
                     <ul className="space-y-2 mb-6">
                       {honey.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-foreground">
@@ -126,7 +134,7 @@ const HoneyPage = () => {
           <ScrollAnimation animation="fade-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center p-8">
-                <LazyImage 
+                <LazyImage
                   src="/lovable-uploads/95c59643-961e-4414-bbd5-a207ff310f53.png"
                   alt="Včelařka s plástí medu - MVFarma"
                   className="max-w-full max-h-full object-cover rounded-lg"
@@ -134,9 +142,7 @@ const HoneyPage = () => {
                 />
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                  Pro včelaře
-                </h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Pro včelaře</h2>
                 <p className="text-lg text-foreground leading-relaxed">
                   Po domluvě pro včelaře dodáváme oddělky případně vyzimované oddělky
                 </p>
@@ -151,21 +157,19 @@ const HoneyPage = () => {
         <div className="container mx-auto px-5 max-w-[1200px]">
           <ScrollAnimation animation="fade-in">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-                Fascinující život včel
-              </h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Fascinující život včel</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Včely jsou úžasní tvorové s komplexní společenskou strukturou. Jeden úl může obsahovat až
-                80 000 včel pracujících jako jeden organismus.
+                Včely jsou úžasní tvorové s komplexní společenskou strukturou. Jeden úl může obsahovat až 80 000 včel
+                pracujících jako jeden organismus.
               </p>
             </div>
           </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Heart, title: "Královny včel", description: "Každý úl má jednu královnu, která může žít až 5 let" },
-              { icon: Leaf, title: "Pracovnice", description: "Dělnice sbírají nektar, stavějí plásty a pečují o mladé" },
-              { icon: Award, title: "Trubci", description: "Samci včel, jejichž úkolem je oplodnění nových královen" }
+              { icon: Heart, title: "Matka", description: "Každý úl má jednu matka, která může žít až 5 let" },
+              { icon: Leaf, title: "Dělnice", description: "Dělnice sbírají nektar, stavějí plásty a pečují o mladé" },
+              { icon: Award, title: "Trubci", description: "Samci včel, jejichž úkolem je oplodnění nových královen" },
             ].map((bee, index) => (
               <ScrollAnimation key={index} animation="scale-in" delay={index * 100}>
                 <div className="text-center bg-card p-8 rounded-lg border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
