@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MVFarmaHeader from '../components/MVFarmaHeader';
 import MVFarmaFooter from '../components/MVFarmaFooter';
 import ScrollAnimation from '../components/ScrollAnimation';
+import LazyImage from '../components/LazyImage';
 import { X } from 'lucide-react';
 
 const GalleryPage = () => {
@@ -84,9 +85,12 @@ const GalleryPage = () => {
                   onClick={() => openLightbox(image.src)}
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-accent to-secondary relative overflow-hidden">
-                    <img 
+                    <LazyImage 
                       src={image.src}
                       alt={image.alt}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      width={400}
+                      height={300}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -111,6 +115,8 @@ const GalleryPage = () => {
             <img
               src={selectedImage}
               alt="Gallery image"
+              loading="eager"
+              decoding="async"
               className="max-w-full max-h-[80vh] object-contain rounded-lg"
             />
           </div>
