@@ -9,7 +9,7 @@ const MobileOptimized = () => {
     };
 
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener('resize', checkIsMobile, { passive: true });
 
     // Mobile-specific optimizations
     if (typeof window !== 'undefined') {
@@ -27,8 +27,8 @@ const MobileOptimized = () => {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
       };
 
-      window.addEventListener('resize', updateVH);
-      window.addEventListener('orientationchange', updateVH);
+      window.addEventListener('resize', updateVH, { passive: true });
+      window.addEventListener('orientationchange', updateVH, { passive: true });
 
       return () => {
         window.removeEventListener('resize', checkIsMobile);

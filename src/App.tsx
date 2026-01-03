@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CriticalCSS from "./components/CriticalCSS";
 import MobileOptimized from "./components/MobileOptimized";
 
 // Performance: Lazy load heavy/non-critical components to reduce initial bundle
@@ -22,7 +21,6 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <CriticalCSS />
     <MobileOptimized />
     <TooltipProvider>
       <BrowserRouter>
