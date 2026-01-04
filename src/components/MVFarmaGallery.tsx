@@ -67,21 +67,6 @@ const MVFarmaGallery = () => {
           ))}
         </div>
 
-        <ScrollAnimation animation="fade-in">
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
-              Sledujte náš každodenní život na sociálních sítích
-            </p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium min-h-[48px]">
-                Instagram
-              </button>
-              <button className="border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium min-h-[48px]">
-                Facebook
-              </button>
-            </div>
-          </div>
-        </ScrollAnimation>
       </div>
 
       {/* Modal */}
