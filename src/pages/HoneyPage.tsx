@@ -107,11 +107,11 @@ const HoneyPage = () => {
                   >
                     {/* Image Column */}
                     <div className="w-full lg:w-1/2 flex-shrink-0">
-                      <div className="aspect-[4/3] w-full rounded-xl overflow-hidden bg-secondary/10">
+                      <div className="aspect-[4/3] w-full rounded-xl overflow-hidden bg-amber-50/60">
                         <LazyImage
                           src={honey.image}
                           alt={honey.alt}
-                          className="object-cover object-center"
+                          className="object-contain object-center p-2"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       </div>
