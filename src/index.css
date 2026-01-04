@@ -50,7 +50,7 @@
   }
 
   html {
-    background-color: hsl(var(--background));
+    background-color: #1a1a1a;
   }
 
   body {
@@ -72,7 +72,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: env(safe-area-inset-top);
+}
+
+.hero-content {
+  padding-top: calc(1rem + env(safe-area-inset-top));
 }
 
 /* Safe area support for fixed header */
