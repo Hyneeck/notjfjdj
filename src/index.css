@@ -49,6 +49,10 @@
     @apply border-border;
   }
 
+  html {
+    background-color: hsl(var(--background));
+  }
+
   body {
     @apply bg-background text-foreground;
     text-rendering: optimizeSpeed;
@@ -63,10 +67,17 @@
 
 /* Critical CSS for hero sections */
 .hero-section {
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Safe area support for fixed header */
+.header-fixed {
+  padding-top: env(safe-area-inset-top);
 }
 
 /* Loading skeleton animation */
