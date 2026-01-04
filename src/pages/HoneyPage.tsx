@@ -31,7 +31,7 @@ const HoneyPage = () => {
         "Přírodní včelí propolis je antibakteriální látka, kterou včely používají k ochraně úlu. Známý pro své léčivé účinky.",
       icon: Droplets,
       features: ["Antibakteriální účinky", "Posiluje imunitu", "100% přírodní"],
-      image: "/lovable-uploads/propolis.webp",
+      image: "/lovable-uploads/propolis.jpeg",
       alt: "Propolis z MVFarma - přírodní včelí produkt",
     },
     {
@@ -39,7 +39,7 @@ const HoneyPage = () => {
       description: "Čistý včelí vosk z našich úlů. Ideální pro výrobu svíček, kosmetiky nebo k použití v domácnosti.",
       icon: Flame,
       features: ["Přírodní materiál", "Pro výrobu svíček", "Kosmetické využití"],
-      image: "/lovable-uploads/vosk.webp",
+      image: "/lovable-uploads/vosk.jpeg",
       alt: "Včelí vosk z MVFarma - přírodní včelí vosk",
     },
   ];
