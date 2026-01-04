@@ -8,7 +8,7 @@ import { Instagram } from 'lucide-react';
 const BlogPage = () => {
   const instagramPosts = [
     {
-      description: "Jarní práce ve včelařství - první kontrola úlů po zimě",
+      description: "Práce ve včelařství - kontrola úlů",
       image: "/lovable-uploads/0b66bf50-89ff-4f01-bb65-989583bc0630.png"
     },
     {
