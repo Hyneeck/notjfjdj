@@ -67,8 +67,8 @@ const MobileOptimized = () => {
         .header-fixed {
           padding-top: env(safe-area-inset-top);
         }
-        .hero-section {
-          padding-top: env(safe-area-inset-top);
+        .hero-content {
+          padding-top: calc(2rem + env(safe-area-inset-top));
         }
         body {
           padding-left: env(safe-area-inset-left);
