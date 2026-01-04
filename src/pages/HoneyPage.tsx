@@ -106,7 +106,7 @@ const HoneyPage = () => {
                       <LazyImage
                         src={honey.image}
                         alt={honey.alt}
-                        className="max-w-full max-h-full object-cover object-top"
+                        className="max-w-full max-h-full object-cover object-center"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </div>
