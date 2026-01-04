@@ -64,14 +64,11 @@ const MobileOptimized = () => {
       
       /* Safe area support for iOS notch/Dynamic Island */
       @supports(padding: env(safe-area-inset-top)) {
-        html {
-          background-color: #1a1a1a;
-        }
         .header-fixed {
           padding-top: env(safe-area-inset-top);
         }
-        .hero-content {
-          padding-top: calc(1rem + env(safe-area-inset-top));
+        .hero-section {
+          padding-top: env(safe-area-inset-top);
         }
         body {
           padding-left: env(safe-area-inset-left);
