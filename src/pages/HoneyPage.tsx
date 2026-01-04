@@ -18,7 +18,7 @@ const HoneyPage = () => {
       alt: "Jarní květový med z MVFarma - světlý med z jarních květů",
     },
     {
-      title: "Letní květový med",
+      title: "Medovicový med",
       description:
         "Květový med z letní sklizně zejména z luk a lesů, má lehce tmavší barvu než jarní. Obsahuje podíl medovice",
       icon: TreePine,
@@ -37,8 +37,7 @@ const HoneyPage = () => {
     },
     {
       title: "Včelí vosk",
-      description:
-        "Čistý včelí vosk z našich úlů. Ideální pro výrobu svíček, kosmetiky nebo k použití v domácnosti.",
+      description: "Čistý včelí vosk z našich úlů. Ideální pro výrobu svíček, kosmetiky nebo k použití v domácnosti.",
       icon: Flame,
       features: ["Přírodní materiál", "Pro výrobu svíček", "Kosmetické využití"],
       image: "/lovable-uploads/be0b432f-05c0-4dfe-992b-553e9168d15c.png",
