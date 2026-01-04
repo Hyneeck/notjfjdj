@@ -1,17 +1,10 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollAnimation from './ScrollAnimation';
 
 const MVFarmaHero = () => {
   return (
     <section id="home" className="hero-section">
-      {/* Background image - absolute positioned to fill entire hero */}
-      <img 
-        src="/lovable-uploads/hero-background-optimized.webp"
-        alt=""
-        className="hero-bg-image"
-        loading="eager"
-        fetchPriority="high"
-      />
       <div className="hero-overlay"></div>
       
       <div className="hero-content">
@@ -25,6 +18,7 @@ const MVFarmaHero = () => {
             </p>
           </div>
         </ScrollAnimation>
+
 
         <ScrollAnimation animation="fade-in" delay={200}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
