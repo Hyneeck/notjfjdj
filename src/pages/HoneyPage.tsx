@@ -5,9 +5,7 @@ import ScrollAnimation from "../components/ScrollAnimation";
 import SEO from "../components/SEO";
 import StructuredData from "../components/StructuredData";
 import LazyImage from "../components/LazyImage";
-import { Flower2, TreePine, Heart, Leaf, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Flower2, TreePine, Heart, Leaf, Award, Droplets, Flame } from "lucide-react";
 
 const HoneyPage = () => {
   const honeyTypes = [
@@ -15,16 +13,36 @@ const HoneyPage = () => {
       title: "Jarní květový med",
       description: "Květový med z jarních květů z luk a zahrad, má světlou barvu a jemnější chuť.",
       icon: Flower2,
-      price: "200 Kč/950g",
       features: ["Jemná sladká chuť", "Světlá barva", "Přirozená krystalizace"],
+      image: "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png",
+      alt: "Jarní květový med z MVFarma - světlý med z jarních květů",
     },
     {
       title: "Letní květový med",
       description:
         "Květový med z letní sklizně zejména z luk a lesů, má lehce tmavší barvu než jarní. Obsahuje podíl medovice",
       icon: TreePine,
-      price: "220 Kč/950g",
       features: ["Pikantnější chuť", "Tmavší barva", "Dlouhá trvanlivost"],
+      image: "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png",
+      alt: "Letní květový med z MVFarma - tmavší med z letní sklizně",
+    },
+    {
+      title: "Propolis",
+      description:
+        "Přírodní včelí propolis je antibakteriální látka, kterou včely používají k ochraně úlu. Známý pro své léčivé účinky.",
+      icon: Droplets,
+      features: ["Antibakteriální účinky", "Posiluje imunitu", "100% přírodní"],
+      image: "/lovable-uploads/64b3e077-193e-499a-ba35-1b4651181cc2.png",
+      alt: "Propolis z MVFarma - přírodní včelí produkt",
+    },
+    {
+      title: "Včelí vosk",
+      description:
+        "Čistý včelí vosk z našich úlů. Ideální pro výrobu svíček, kosmetiky nebo k použití v domácnosti.",
+      icon: Flame,
+      features: ["Přírodní materiál", "Pro výrobu svíček", "Kosmetické využití"],
+      image: "/lovable-uploads/be0b432f-05c0-4dfe-992b-553e9168d15c.png",
+      alt: "Včelí vosk z MVFarma - přírodní včelí vosk",
     },
   ];
 
@@ -88,16 +106,8 @@ const HoneyPage = () => {
                   <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                     <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center p-8">
                       <LazyImage
-                        src={
-                          index === 0
-                            ? "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png"
-                            : "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png"
-                        }
-                        alt={
-                          index === 0
-                            ? "Jarní květový med z MVFarma - světlý med z jarních květů"
-                            : "Letní květový med z MVFarma - tmavší med z letní sklizně"
-                        }
+                        src={honey.image}
+                        alt={honey.alt}
                         className="max-w-full max-h-full object-cover"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
@@ -106,7 +116,7 @@ const HoneyPage = () => {
                   <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
                     <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{honey.title}</h2>
                     <p className="text-lg text-foreground mb-6 leading-relaxed">{honey.description}</p>
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-2">
                       {honey.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-foreground">
                           <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -114,12 +124,6 @@ const HoneyPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="text-2xl font-bold text-primary mb-4">{honey.price}</div>
-                    <Link to="/kontakt">
-                      <Button variant="default" size="lg" className="px-8">
-                        Objednávky přijímáme přes email.
-                      </Button>
-                    </Link>
                   </div>
                 </div>
               </ScrollAnimation>
