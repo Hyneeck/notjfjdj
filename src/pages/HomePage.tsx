@@ -1,14 +1,12 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import StructuredData from '../components/StructuredData';
 import LazyImage from '../components/LazyImage';
-
-// Lazy load non-critical components to reduce initial bundle
-const MVFarmaHeader = lazy(() => import('../components/MVFarmaHeader'));
-const MVFarmaHero = lazy(() => import('../components/MVFarmaHero'));
-const MVFarmaFooter = lazy(() => import('../components/MVFarmaFooter'));
-const ScrollAnimation = lazy(() => import('../components/ScrollAnimation'));
+import MVFarmaHeader from '../components/MVFarmaHeader';
+import MVFarmaHero from '../components/MVFarmaHero';
+import MVFarmaFooter from '../components/MVFarmaFooter';
+import ScrollAnimation from '../components/ScrollAnimation';
 
 const HomePage = () => {
   return (
@@ -50,78 +48,67 @@ const HomePage = () => {
           ]
         }}
       />
-      <Suspense fallback={<div className="h-20 bg-background"></div>}>
-        <MVFarmaHeader />
-      </Suspense>
-      <Suspense fallback={<div className="h-screen bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
-        <MVFarmaHero />
-      </Suspense>
+      <MVFarmaHeader />
+      <MVFarmaHero />
       
       {/* Product Preview Section */}
       <section className="py-[clamp(2rem,6vw,6rem)] bg-accent">
         <div className="container mx-auto px-5 max-w-[1200px]">
-          <Suspense fallback={<div className="text-center mb-16"><h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Naše medy</h2></div>}>
-            <ScrollAnimation animation="fade-in">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Naše medy</h2>
-              </div>
-            </ScrollAnimation>
-          </Suspense>
+          <ScrollAnimation animation="fade-in">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Naše medy</h2>
+            </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <Suspense fallback={<div className="bg-card rounded-lg border border-border overflow-hidden h-96 animate-pulse"></div>}>
-              <ScrollAnimation animation="slide-in-left">
+            <ScrollAnimation animation="slide-in-left">
               <Link to="/medy-a-vcely" className="group block">
                 <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center p-4">
-                      <LazyImage 
-                        src="/lovable-uploads/936cc78e-2a1f-49c7-ac34-a35ec7fe5d15.png"
-                        alt="Jarní květový med z MVFarma - světlý med z jarních květů"
-                        className="max-w-full max-h-full object-cover"
-                        priority={true}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                   </div>
-                   <div className="p-6">
-                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Jarní květový med</h3>
-                     <p className="text-muted-foreground mb-4">
-                       Světlý med z jarních květů z luk a zahrad
-                     </p>
+                    <LazyImage 
+                      src="/lovable-uploads/936cc78e-2a1f-49c7-ac34-a35ec7fe5d15.png"
+                      alt="Jarní květový med z MVFarma - světlý med z jarních květů"
+                      className="max-w-full max-h-full object-cover"
+                      priority={true}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Jarní květový med</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Světlý med z jarních květů z luk a zahrad
+                    </p>
                     <div className="text-2xl font-bold text-primary">200 Kč/950g</div>
                   </div>
                 </div>
               </Link>
             </ScrollAnimation>
-            </Suspense>
 
-            <Suspense fallback={<div className="bg-card rounded-lg border border-border overflow-hidden h-96 animate-pulse"></div>}>
-              <ScrollAnimation animation="slide-in-right" delay={100}>
+            <ScrollAnimation animation="slide-in-right" delay={100}>
               <Link to="/medy-a-vcely" className="group block">
                 <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-[4/3] bg-gradient-to-br from-accent to-secondary flex items-center justify-center p-4">
-                      <LazyImage 
-                        src="/lovable-uploads/cba10f0a-8de3-4c22-898c-bcc76b96bc31.png"
-                        alt="Letní květový med z MVFarma - tmavší med z letní sklizně"
-                        className="max-w-full max-h-full object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                   </div>
-                   <div className="p-6">
-                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Letní květový med</h3>
-                     <p className="text-muted-foreground mb-4">
-                       Květový med z letní sklizně zejména z luk a lesů
-                     </p>
+                    <LazyImage 
+                      src="/lovable-uploads/cba10f0a-8de3-4c22-898c-bcc76b96bc31.png"
+                      alt="Letní květový med z MVFarma - tmavší med z letní sklizně"
+                      className="max-w-full max-h-full object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Letní květový med</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Květový med z letní sklizně zejména z luk a lesů
+                    </p>
                     <div className="text-2xl font-bold text-primary">220 Kč/950g</div>
                   </div>
                 </div>
               </Link>
             </ScrollAnimation>
-            </Suspense>
           </div>
 
           {/* CTA Section */}
-          <Suspense fallback={<div className="text-center bg-card/50 p-8 md:p-12 rounded-lg border border-border h-64 animate-pulse"></div>}>
-            <ScrollAnimation animation="fade-in">
+          <ScrollAnimation animation="fade-in">
             <div className="text-center bg-card/50 p-8 md:p-12 rounded-lg border border-border">
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                 Chcete se dozvědět více?
@@ -145,13 +132,10 @@ const HomePage = () => {
               </div>
             </div>
           </ScrollAnimation>
-          </Suspense>
         </div>
       </section>
 
-      <Suspense fallback={<div className="bg-muted h-96"></div>}>
-        <MVFarmaFooter />
-      </Suspense>
+      <MVFarmaFooter />
     </div>
   );
 };
