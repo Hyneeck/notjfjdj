@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 
-interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface LazyImageProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'className'> {
   src: string;
   alt: string;
   className?: string;
+  containerClassName?: string;
   priority?: boolean;
   placeholder?: string;
   rootMargin?: string;
@@ -16,6 +17,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   src,
   alt,
   className,
+  containerClassName,
   priority = false,
   placeholder = 'blur',
   rootMargin = '10px',
@@ -69,7 +71,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   }, [priority, rootMargin]);
 
   return (
-    <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
+    <div ref={imgRef} className={cn("relative overflow-hidden w-full h-full", containerClassName)}>
       {!isLoaded && !hasError && (
         <div className="absolute inset-0 bg-muted animate-pulse" />
       )}
@@ -85,7 +87,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           className={cn(
-            "transition-opacity duration-300",
+            "w-full h-full transition-opacity duration-300",
             isLoaded ? "opacity-100" : "opacity-0",
             hasError && "hidden",
             className
