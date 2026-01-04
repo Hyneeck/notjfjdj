@@ -93,47 +93,39 @@ const HoneyPage = () => {
       </section>
 
       {/* Honey Types Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-5 max-w-[1100px]">
-          <div className="flex flex-col gap-20">
-            {honeyTypes.map((honey, index) => {
-              const isReversed = index % 2 === 1;
-              return (
-                <ScrollAnimation key={index} animation="fade-in" delay={index * 100}>
-                  <div
-                    className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-center ${
-                      isReversed ? "lg:flex-row-reverse" : ""
-                    }`}
-                  >
-                    {/* Image Column */}
-                    <div className="w-full lg:w-1/2 flex-shrink-0">
-                      <div className="aspect-square w-full rounded-3xl overflow-hidden bg-amber-50/60 shadow-md">
-                        <LazyImage
-                          src={honey.image}
-                          alt={honey.alt}
-                          className="object-contain object-center p-4"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
-                      </div>
-                    </div>
-                    
-                    {/* Text Column */}
-                    <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                      <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">{honey.title}</h2>
-                      <p className="text-lg text-foreground mb-6 leading-relaxed">{honey.description}</p>
-                      <ul className="space-y-3">
-                        {honey.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-foreground">
-                            <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+      <section className="py-[clamp(2rem,6vw,6rem)] bg-background">
+        <div className="container mx-auto px-5 max-w-[1200px]">
+          <div className="grid grid-cols-1 gap-16">
+            {honeyTypes.map((honey, index) => (
+              <ScrollAnimation key={index} animation="fade-in" delay={index * 200}>
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                >
+                  <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center p-8">
+                      <LazyImage
+                        src={honey.image}
+                        alt={honey.alt}
+                        className="max-w-full max-h-full object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
                     </div>
                   </div>
-                </ScrollAnimation>
-              );
-            })}
+                  <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{honey.title}</h2>
+                    <p className="text-lg text-foreground mb-6 leading-relaxed">{honey.description}</p>
+                    <ul className="space-y-2">
+                      {honey.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
