@@ -61,20 +61,6 @@ const MobileOptimized = () => {
           -webkit-tap-highlight-color: transparent;
         }
       }
-      
-      /* Safe area support for iOS notch/Dynamic Island */
-      @supports(padding: env(safe-area-inset-top)) {
-        .header-fixed {
-          padding-top: env(safe-area-inset-top);
-        }
-        .hero-section {
-          padding-top: env(safe-area-inset-top);
-        }
-        body {
-          padding-left: env(safe-area-inset-left);
-          padding-right: env(safe-area-inset-right);
-        }
-      }
     `;
 
     const style = document.createElement('style');
