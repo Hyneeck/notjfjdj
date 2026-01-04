@@ -10,8 +10,8 @@ import { Flower2, TreePine, Heart, Leaf, Award, Droplets, Flame } from "lucide-r
 const HoneyPage = () => {
   const honeyTypes = [
     {
-      title: "Jarní květový med",
-      description: "Květový med z jarních květů z luk a zahrad, má světlou barvu a jemnější chuť.",
+      title: "Květový med",
+      description: "Květový med z jarních luk a zahrad, má světlou barvu a jemnější chuť. Obsahuje pyl.",
       icon: Flower2,
       features: ["Jemná sladká chuť", "Světlá barva", "Přirozená krystalizace"],
       image: "/lovable-uploads/07c40aab-8545-48c0-ae1d-5c7f97377747.png",
@@ -19,8 +19,7 @@ const HoneyPage = () => {
     },
     {
       title: "Medovicový med",
-      description:
-        "Květový med z letní sklizně zejména z luk a lesů, má lehce tmavší barvu než jarní. Obsahuje podíl medovice",
+      description: "Medovicový med má lehce tmavší barvu než jarní. Obsahuje více minerálů.",
       icon: TreePine,
       features: ["Pikantnější chuť", "Tmavší barva", "Dlouhá trvanlivost"],
       image: "/lovable-uploads/c3bb5d04-af5a-43ee-bda0-4b67e3f28984.png",
