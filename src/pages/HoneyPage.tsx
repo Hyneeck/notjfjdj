@@ -102,11 +102,11 @@ const HoneyPage = () => {
                   className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
                 >
                   <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                    <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center p-8">
+                    <div className={`rounded-lg overflow-hidden ${honey.title === "Propolis" ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
                       <LazyImage
                         src={honey.image}
                         alt={honey.alt}
-                        className="max-w-full max-h-full object-cover"
+                        className={`w-full h-full object-cover ${honey.title === "Propolis" ? "[object-position:50%_15%]" : ""}`}
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </div>
