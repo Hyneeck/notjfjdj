@@ -59,7 +59,7 @@ const ContactPage = () => {
                         <p className="text-muted-foreground">
                           MVFarma<br />
                           Miroslav Tuka a Vlaďka Hartlová <br />
-                          Registrační číslo včelaře <br />
+                          Registrační číslo chovatele: 196597
                         </p>
                       </div>
                     </div>

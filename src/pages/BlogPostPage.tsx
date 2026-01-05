@@ -4,116 +4,35 @@ import MVFarmaFooter from '../components/MVFarmaFooter';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar } from 'lucide-react';
 
-// Same temporary posts data as BlogPage
+// Blog posts data
 const posts = [
   {
     id: 1,
-    title: 'Jarní probuzení včelstev: Jak správně začít sezónu',
-    slug: 'jarni-probuzeni-vcelstev',
-    coverUrl: '/lovable-uploads/dbc0e436-d319-4d9b-a7f8-78847ac61863.png',
-    excerpt: 'S příchodem jara se včelstva probouzejí k životu. Přinášíme vám tipy, jak správně připravit úly a zajistit zdravý start do nové sezóny.',
-    publishedAt: '2026-01-03',
-    category: 'Včelařství',
+    title: 'Získali jsme certifikát "Med jak má být" s pečetí VÚVč Dol',
+    slug: 'med-jak-ma-byt-certifikat',
+    coverUrl: '/lovable-uploads/med-jak-ma-byt-certificate.jpg',
+    excerpt: 'S radostí oznamujeme, že náš květový med ze stanoviště Střihov získal prestižní certifikát "Med jak má být" s pečetí Výzkumného ústavu včelařského v Dole.',
+    publishedAt: '2025-05-17',
+    category: 'Certifikace',
     content: `
-      <p>S příchodem prvních teplých dnů se včelstva pomalu probouzejí ze zimního klidu. Pro včelaře nastává jedno z nejdůležitějších období roku – jarní revize a příprava na novou sezónu.</p>
+      <p>S hrdostí vám oznamujeme, že náš květový med ze stanoviště Střihov získal prestižní certifikát <strong>"Med jak má být"</strong> s pečetí Výzkumného ústavu včelařského v Dole (VÚVč Dol).</p>
       
-      <h2>Kdy začít s jarní revizí?</h2>
-      <p>Ideální doba pro první jarní kontrolu je, když venkovní teplota dosáhne alespoň 12-14 °C. Včely by měly již aktivně létat a přinášet první pyl z jívy a lísky.</p>
+      <h2>Co certifikát znamená?</h2>
+      <p>Certifikát "Med jak má být" je zárukou nejvyšší kvality českého medu. Získání tohoto oprávnění znamená, že náš med splňuje přísné kvalitativní normy stanovené VÚVč Dol.</p>
       
-      <h2>Na co se zaměřit při první kontrole?</h2>
+      <h2>Detaily certifikace</h2>
       <ul>
-        <li><strong>Síla včelstva</strong> – Kolik rámků včely obsedají?</li>
-        <li><strong>Zásoby medu</strong> – Mají včely dostatek potravy?</li>
-        <li><strong>Přítomnost matky</strong> – Hledáme vajíčka a mladé larvičky</li>
-        <li><strong>Zdravotní stav</strong> – Kontrola na známky nemocí</li>
+        <li><strong>Druh medu:</strong> Květový med</li>
+        <li><strong>Stanoviště:</strong> Střihov</li>
+        <li><strong>Certifikované množství:</strong> 500 kg</li>
+        <li><strong>Datum vytáčení:</strong> 17. května 2025</li>
+        <li><strong>Protokol VÚVč:</strong> 2531/2025</li>
       </ul>
       
-      <h2>Přikrmování na jaře</h2>
-      <p>Pokud má včelstvo nedostatek zásob, je třeba přikrmit cukrovým sirupem nebo medocukrovým těstem. Nikdy nenechávejte včelstva hladovět – na jaře potřebují hodně energie pro rozvoj.</p>
+      <h2>Proč je to důležité?</h2>
+      <p>Certifikace VÚVč Dol je jedním z nejprestižnějších ocenění pro české včelaře. Garantuje, že med je pravý, nefalšovaný a vyrobený podle tradičních postupů s důrazem na kvalitu a přírodní složení.</p>
       
-      <h2>Rozšíření prostoru</h2>
-      <p>S rostoucím počtem včel a přínosem nektaru je třeba postupně přidávat nové rámky. Včas rozšiřujte prostor, aby včelstvo nemělo tendenci k rojení.</p>
-      
-      <p>Pečlivá jarní příprava je základem úspěšné včelařské sezóny. Věnujte svým včelám dostatek pozornosti a oni vám to vrátí bohatou úrodou medu.</p>
-    `
-  },
-  {
-    id: 2,
-    title: 'Tajemství kvalitního medu: Od úlu až na váš stůl',
-    slug: 'tajemstvi-kvalitniho-medu',
-    coverUrl: '/lovable-uploads/spring-honey-real.webp',
-    excerpt: 'Kvalitní med je výsledkem pečlivé práce včelaře. Zjistěte, jak poznáte opravdu kvalitní produkt.',
-    publishedAt: '2025-12-28',
-    category: 'Med',
-    content: `
-      <p>Med je jedním z nejstarších sladidel, které lidstvo zná. Ale ne každý med je stejný. Kvalita závisí na mnoha faktorech, od zdraví včelstev až po způsob zpracování.</p>
-      
-      <h2>Jak poznáte kvalitní med?</h2>
-      <p>Kvalitní med by měl být čistý, bez příměsí a měl by mít charakteristickou vůni odpovídající jeho původu. Krystalizace je přirozený proces a svědčí o pravosti medu.</p>
-      
-      <h2>Proč kupovat od místních včelařů?</h2>
-      <p>Místní med obsahuje pyl z vašeho okolí, což může pomoci při alergiích. Navíc podporujete lokální včelaře a máte jistotu čerstvosti a kvality.</p>
-    `
-  },
-  {
-    id: 3,
-    title: 'Propolis: Přírodní antibiotikum z úlu',
-    slug: 'propolis-prirodni-antibiotikum',
-    coverUrl: '/lovable-uploads/propolis.webp',
-    excerpt: 'Propolis má úžasné léčivé vlastnosti. Přečtěte si, jak ho můžete využít ve svém životě.',
-    publishedAt: '2025-12-15',
-    category: 'Zdraví',
-    content: `
-      <p>Propolis, známý také jako včelí tmel, je pryskyřičná látka, kterou včely sbírají z pupenů stromů a zpracovávají pro ochranu úlu.</p>
-      
-      <h2>Léčivé účinky propolisu</h2>
-      <p>Propolis má silné antibakteriální, antivirové a protizánětlivé účinky. Používá se při nachlazení, bolestech v krku a k posílení imunity.</p>
-      
-      <h2>Jak propolis používat?</h2>
-      <p>Propolis je k dispozici ve formě tinktury, kapek, mastí nebo jako součást různých doplňků stravy. Při prvním použití vyzkoušejte malé množství kvůli možným alergiím.</p>
-    `
-  },
-  {
-    id: 4,
-    title: 'Zimování včelstev: Příprava na chladné měsíce',
-    slug: 'zimovani-vcelstev',
-    coverUrl: '/lovable-uploads/summer-honey-real.webp',
-    excerpt: 'Správná příprava na zimu je klíčová pro přežití včelstev. Sdílíme naše osvědčené postupy.',
-    publishedAt: '2025-11-20',
-    category: 'Včelařství',
-    content: `
-      <p>Zimování včelstev je kritické období, které rozhoduje o úspěchu celého příštího roku. Dobře připravené včelstvo přečká i tuhé mrazy.</p>
-      
-      <h2>Kdy začít s přípravou?</h2>
-      <p>S přípravou na zimu začínáme již v srpnu po posledním medobraní. Včelstva potřebují dostatek času na vytvoření zimních zásob.</p>
-      
-      <h2>Klíčové kroky pro úspěšné zimování</h2>
-      <ul>
-        <li>Léčba proti varroáze</li>
-        <li>Doplnění zimních zásob</li>
-        <li>Zúžení česna</li>
-        <li>Zateplení úlu</li>
-      </ul>
-    `
-  },
-  {
-    id: 5,
-    title: 'Včelí vosk a jeho využití v domácnosti',
-    slug: 'vceli-vosk-vyuziti',
-    coverUrl: '/lovable-uploads/vosk.webp',
-    excerpt: 'Včelí vosk není jen na svíčky. Objevte jeho mnohostranné využití v péči o domácnost.',
-    publishedAt: '2025-11-05',
-    category: 'Tipy',
-    content: `
-      <p>Včelí vosk je úžasný přírodní materiál s mnoha využitími. Od svíček přes kosmetiku až po péči o nábytek.</p>
-      
-      <h2>Využití včelího vosku</h2>
-      <ul>
-        <li><strong>Svíčky</strong> – Voňavé a čistě hořící</li>
-        <li><strong>Kosmetika</strong> – Balzámy na rty, krémy</li>
-        <li><strong>Voskované ubrousky</strong> – Ekologická náhrada fólie</li>
-        <li><strong>Péče o dřevo</strong> – Leští a chrání nábytek</li>
-      </ul>
+      <p>Děkujeme všem našim zákazníkům za důvěru a těšíme se, že vám můžeme nabídnout med té nejvyšší kvality!</p>
     `
   }
 ];
