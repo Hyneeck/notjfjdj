@@ -14,6 +14,7 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const HoneyPage = lazy(() => import("./pages/HoneyPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/medy-a-vcely" element={<HoneyPage />} />
             <Route path="/fotogalerie" element={<GalleryPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/kontakt" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
