@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Flower2, TreePine } from 'lucide-react';
 import ScrollAnimation from './ScrollAnimation';
 import LazyImage from './LazyImage';

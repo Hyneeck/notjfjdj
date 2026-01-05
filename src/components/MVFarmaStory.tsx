@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Users, MapPin, Clock, Heart } from 'lucide-react';
 import ScrollAnimation from './ScrollAnimation';
 

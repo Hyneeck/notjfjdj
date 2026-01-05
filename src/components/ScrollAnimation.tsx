@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState, ReactNode, FC } from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 
 interface ScrollAnimationProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   animation?: 'fade-in' | 'slide-in-left' | 'slide-in-right' | 'scale-in';
   delay?: number;
 }
 
-const ScrollAnimation: FC<ScrollAnimationProps> = ({
+const ScrollAnimation: React.FC<ScrollAnimationProps> = ({ 
   children, 
   className = '', 
   animation = 'fade-in',

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import MVFarmaHeader from '../components/MVFarmaHeader';
 import MVFarmaFooter from '../components/MVFarmaFooter';
 import { MapPin, Phone, Mail, HelpCircle } from 'lucide-react';
