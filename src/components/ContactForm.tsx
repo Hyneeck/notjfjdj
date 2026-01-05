@@ -1,11 +1,11 @@
-import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { FC } from 'react';
 
 interface ContactFormProps {
   onSubmit?: (formData: { name: string; email: string; message: string }) => void;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
+const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
   const [state, handleSubmit] = useForm("mgvllnll");
   
   if (state.succeeded) {
