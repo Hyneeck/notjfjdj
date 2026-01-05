@@ -1,4 +1,4 @@
-import React from "react";
+
 import MVFarmaHeader from "../components/MVFarmaHeader";
 import MVFarmaFooter from "../components/MVFarmaFooter";
 import ScrollAnimation from "../components/ScrollAnimation";
